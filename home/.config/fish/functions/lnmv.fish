@@ -1,6 +1,6 @@
 function lnmv
-    set dest_dir $argv[1..-2]
-    set files $argv[-1]
+    set files $argv[1..-2]
+    set dest_dir $argv[-1]
 
     for f in $files
         set fname (string split / $f)[-1]
