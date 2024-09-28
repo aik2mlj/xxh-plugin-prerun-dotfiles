@@ -34,10 +34,10 @@ bind \co "yazi-cd; commandline -f repaint"
 # bind \co "set old_tty (stty -g); stty sane; lfcd; stty $old_tty; commandline -f repaint"
 # bind \co ranger-cd
 
-alias ls="eza -b --group-directories-first --icons"
-alias la="eza -b -l -a --group-directories-first --icons"
-alias ll="eza -b -l --group-directories-first --icons"
-alias l.="eza -b -a --group-directories-first --icons | egrep '^\.'" # show only dotfiles
+# alias ls="eza -b --group-directories-first --icons"
+# alias la="eza -b -l -a --group-directories-first --icons"
+# alias ll="eza -b -l --group-directories-first --icons"
+# alias l.="eza -b -a --group-directories-first --icons | egrep '^\.'" # show only dotfiles
 
 alias rm="/bin/rm -v > ~/.rm.log"
 
@@ -61,10 +61,10 @@ abbr fs "fluidsynth --quiet /usr/share/sounds/sf2/GeneralUser\ GS\ v1.471.sf2"
 
 # ====== Copied from garuda's fish config
 ## Starship prompt
-set VIRTUAL_ENV_DISABLE_PROMPT 1
-if status is-interactive
-    source ("/usr/bin/starship" init fish --print-full-init | psub)
-end
+# set VIRTUAL_ENV_DISABLE_PROMPT 1
+# if status is-interactive
+#     source ("/usr/bin/starship" init fish --print-full-init | psub)
+# end
 
 # Fish command history
 function history
@@ -107,16 +107,11 @@ alias cleanup='sudo pacman -Rns (pacman -Qtdq)'
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 # ====== Copying ends
 
-# rclone stuff
-alias mount_yuki='rclone mount --vfs-cache-mode writes --vfs-cache-max-size 5G --vfs-cache-max-age 10h --daemon yuki: /mnt/Yuki'
-alias mount_yuki_top='rclone mount --vfs-cache-mode writes --vfs-cache-max-size 5G --vfs-cache-max-age 10h --daemon yuki_top: /mnt/Yuki_top'
-alias mount_gsd='rclone mount --vfs-cache-mode writes --vfs-cache-max-size 5G --vfs-cache-max-age 10h --daemon gsd: /mnt/GSD'
-
 # color scheme git@github.com:aik2mlj/fish-color-scheme-switcher.git
 # scheme set tokyonight
 # kanagawa
 
-zoxide init fish | source
+# zoxide init fish | source
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
