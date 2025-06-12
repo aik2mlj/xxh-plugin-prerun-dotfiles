@@ -14,7 +14,7 @@ Preview file types using `rich` command in Yazi. This plugin allows preview for 
 
 ## Requirements
 
-- [Yazi](https://github.com/sxyazi/yazi) v0.4 or higher.
+- [Yazi](https://github.com/sxyazi/yazi) v25.4.8 or higher.
 - [rich-cli](https://github.com/Textualize/rich) v13.7.1 or higher.
 
 ## Installation
@@ -22,7 +22,7 @@ Preview file types using `rich` command in Yazi. This plugin allows preview for 
 To install this plugin, simply run-
 
 ```bash
-ya pack -a AnirudhG07/rich-preview
+ya pkg add AnirudhG07/rich-preview
 ## For linux and MacOS
 git clone https://github.com/AnirudhG07/rich-preview.yazi.git ~/.config/yazi/plugins/rich-preview.yazi
 
@@ -69,6 +69,20 @@ You can add more, remove and choose themes as you wish. You can set styles or Th
 ## Notes
 
 Currently the colors maynot be uniformly present, along with weird lines here and there. This is due to `"--force-terminal"` option. You can disable it if you find it annoying. Work is in progress to possibly fix the issue.
+
+## Using piper.yazi
+
+[piper.yazi](https://github.com/yazi-rs/plugins/tree/main/piper.yazi) is a general-purpose previewer - you can pass any shell command to piper and it will use the command's output as the preview content.
+
+To use `rich` with piper, you can add this in your `yazi.toml` file:
+
+```toml
+[[plugin.prepend_previewers]]
+name = "*.md"
+run  = 'piper -- rich -j --left --panel=rounded --guides --line-numbers --force-terminal "$1"'
+```
+
+Note you can also add other filetypes as mentioned above in the same format.
 
 # Explore Yazi
 
