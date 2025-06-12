@@ -62,9 +62,14 @@ abbr fs "fluidsynth --quiet /usr/share/sounds/sf2/GeneralUser\ GS\ v1.471.sf2"
 # ====== Copied from garuda's fish config
 ## Starship prompt
 # set VIRTUAL_ENV_DISABLE_PROMPT 1
-# if status is-interactive
-#     source ("/usr/bin/starship" init fish --print-full-init | psub)
-# end
+if status is-interactive
+    if type -q starship
+        source (starship init fish --print-full-init | psub)
+    end
+    if type -q zoxide
+        zoxide init fish | source
+    end
+end
 
 # Fish command history
 function history
@@ -110,8 +115,6 @@ alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 # color scheme git@github.com:aik2mlj/fish-color-scheme-switcher.git
 # scheme set tokyonight
 # kanagawa
-
-# zoxide init fish | source
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
